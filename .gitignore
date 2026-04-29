@@ -11,3 +11,4 @@ htmlcov/
 .env
 *.swp
 state.json
+.venv/
