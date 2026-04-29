@@ -1,0 +1,13 @@
+.github/
+.idea/
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.coverage
+htmlcov/
+.env
+*.swp
+state.json
