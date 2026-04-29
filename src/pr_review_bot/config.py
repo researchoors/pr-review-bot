@@ -37,11 +37,11 @@ class BotConfig:
         """
         repos_str = os.environ.get("PR_REVIEW_REPOS", "")
         if not repos_str.strip():
-            raise ValueError("PR_REVIEW_REPOS env var is required (comma-separated owner/repo list)")
+            raise ValueError("PR_REVIEW_REPOS env var is required (comma-separated owner/repo)")
 
         repo_names = [r.strip() for r in repos_str.split(",") if r.strip()]
         if not repo_names:
-            raise ValueError("PR_REVIEW_REPOS env var is required (comma-separated owner/repo list)")
+            raise ValueError("PR_REVIEW_REPOS env var is required (comma-separated owner/repo)")
         state_dir = Path(os.environ.get("PR_REVIEW_STATE_DIR", str(Path.home() / ".pr-review-bot")))
         token = os.environ.get("GITHUB_TOKEN")
         poll_secs = int(os.environ.get("PR_REVIEW_POLL_SECS", "60"))

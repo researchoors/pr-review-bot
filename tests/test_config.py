@@ -2,12 +2,9 @@
 
 from __future__ import annotations
 
-import os
-from pathlib import Path
-
 import pytest
 
-from pr_review_bot.config import BotConfig, RepoConfig
+from pr_review_bot.config import BotConfig
 
 
 class TestBotConfig:

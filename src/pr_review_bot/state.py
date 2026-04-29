@@ -88,7 +88,10 @@ class RepoState:
 
     def pending_reviews(self) -> list[PRRecord]:
         """Return PRs that need review comments posted."""
-        return [r for r in self.prs.values() if r.status in ("pending_review", "reviewed", "failed")]
+        return [
+            r for r in self.prs.values()
+            if r.status in ("pending_review", "reviewed", "failed")
+        ]
 
     def unseen_prs(self, open_pr_numbers: list[int]) -> list[int]:
         """Return PR numbers from the open list that we haven't seen yet."""

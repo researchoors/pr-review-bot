@@ -2,9 +2,6 @@
 
 from __future__ import annotations
 
-import json
-from pathlib import Path
-
 from pr_review_bot.state import PRRecord, RepoState
 
 

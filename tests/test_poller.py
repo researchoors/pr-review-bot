@@ -3,11 +3,8 @@
 from __future__ import annotations
 
 import json
-from unittest.mock import MagicMock, patch
+from unittest.mock import patch
 
-import pytest
-
-from pr_review_bot.config import BotConfig, RepoConfig
 from pr_review_bot.github_client import PRInfo
 from pr_review_bot.poller import poll_all, poll_repo
 

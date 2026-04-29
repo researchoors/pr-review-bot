@@ -13,9 +13,6 @@ Skip with: pytest -m "not e2e"
 
 from __future__ import annotations
 
-import json
-from unittest.mock import MagicMock
-
 import pytest
 
 from pr_review_bot.github_client import PRInfo
@@ -58,7 +55,11 @@ class TestE2EFlow:
         assert new_prs[0]["status"] == "pending_review"
 
         # Step 3: Simulate review analysis producing a review body
-        review_body = "## Hermes Agent Review\n\n**Verdict: Needs changes**\n\n🔴 Critical: Auth bypass in login path"
+        review_body = (
+            "## Hermes Agent Review\n\n"
+            "**Verdict: Needs changes**\n\n"
+            "🔴 Critical: Auth bypass in login path"
+        )
         reviews = {42: review_body}
 
         # Step 4: Post the comment

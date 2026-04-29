@@ -2,17 +2,12 @@
 
 from __future__ import annotations
 
-import json
-import os
-import tempfile
-from pathlib import Path
 from unittest.mock import MagicMock
 
 import pytest
 
 from pr_review_bot.config import BotConfig, RepoConfig
 from pr_review_bot.github_client import PRInfo
-from pr_review_bot.state import PRRecord, RepoState
 
 
 @pytest.fixture

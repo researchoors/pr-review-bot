@@ -2,12 +2,6 @@
 
 from __future__ import annotations
 
-import json
-from unittest.mock import MagicMock
-
-import pytest
-
-from pr_review_bot.github_client import PRInfo
 from pr_review_bot.poller import poll_repo
 from pr_review_bot.poster import ensure_all_commented, post_pending_comments
 
@@ -15,7 +9,9 @@ from pr_review_bot.poster import ensure_all_commented, post_pending_comments
 class TestPostPendingComments:
     """Tests for post_pending_comments()."""
 
-    def test_posts_comment_for_pending_review(self, sample_repo_config, sample_prs, mock_github_client):
+    def test_posts_comment_for_pending_review(
+        self, sample_repo_config, sample_prs, mock_github_client
+    ):
         # Set up: poll to get PRs into state
         mock_github_client.list_open_prs.return_value = sample_prs
         poll_repo(mock_github_client, sample_repo_config)
